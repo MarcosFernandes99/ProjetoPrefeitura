@@ -5,6 +5,8 @@ let contador = 6
 
 console.log("A média do salário da população é:", "R$", CalcularMediaSalario())
 console.log("A média de filhos da população é:", CalcularMediaFilhos())
+console.log("O maior salário da população é:", "R$", CalcularMaiorSalario())
+console.log("A porcentagem de habitantes com salário até R$ 1500:", "%", CalcularPorcentagem())
 
 function CalcularMediaSalario(){
     let media = 0
@@ -25,3 +27,32 @@ function CalcularMediaFilhos(){
 
         return media.toFixed(2)
 }
+
+function CalcularMaiorSalario(){
+    let maiorSalario = 0
+    for(let i = 0; i < contador; i++){
+        if(salario[i] > maiorSalario){
+            maiorSalario = salario[i]
+        }
+    }
+
+        return maiorSalario
+
+}
+
+function CalcularPorcentagem(){
+    let quantidadePessoas = 0
+    let porcentagem = 0
+    for(let i = 0; i < contador; i ++){
+        if(salario[i] <= 1500){
+            quantidadePessoas++
+        }
+    }
+
+    porcentagem = (100 * quantidadePessoas) / contador
+    
+    return porcentagem.toFixed(2)
+
+}
+
+
